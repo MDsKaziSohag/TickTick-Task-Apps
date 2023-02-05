@@ -40,12 +40,12 @@ class AllTasks extends StatelessWidget {
               text: AppStrings.AllTasks,
               fontsize: 14.sp,
               FontWeight: FontWeight.w600,
-              Color:Colors.black),
+              Color: AppColors.BlackTitleColor),
           AppSText(
               text: AppStrings.SeeAll,
               fontsize: 12.sp,
               FontWeight: FontWeight.w400,
-              Color:Colors.black),
+              Color: AppColors.BlackSubTitleColor),
         ],
       ),
     );
@@ -53,9 +53,64 @@ class AllTasks extends StatelessWidget {
 }
 
 class AllTasksCard extends StatelessWidget {
-  const AllTasksCard({
-    Key? key,
-  }) : super(key: key);
+  final List<Map<String, dynamic>> GridMap = [
+    {
+      "img": Container(
+        height: 29.h,
+        width: 35.w,
+        decoration: BoxDecoration(
+          color: AppColors.CardImgColorAll,
+          borderRadius: BorderRadius.all(
+            Radius.circular(1.r),
+          ),
+        ),
+        child: Image.asset(
+          "images/group.png",
+          color: Colors.white,
+        ),
+      ),
+      "title": AppStrings.OnlineClassRoutine,
+      "subtitle": AppStrings.Date,
+    },
+    {
+      "img": Container(
+        height: 29.h,
+        width: 35.w,
+        decoration: BoxDecoration(
+          color: AppColors.CardImgColorAll,
+          borderRadius: BorderRadius.all(
+            Radius.circular(1.r),
+          ),
+        ),
+        child: Image.asset(
+          "images/group.png",
+          color: Colors.white,
+        ),
+      ),
+      "title": AppStrings.OnlineClassRoutine,
+      "subtitle": AppStrings.Date,
+    },
+    {
+      "img": Container(
+        height: 29.h,
+        width: 35.w,
+        decoration: BoxDecoration(
+          color: AppColors.CardImgColorAll,
+          borderRadius: BorderRadius.all(
+            Radius.circular(1.r),
+          ),
+        ),
+        child: Image.asset(
+          "images/group.png",
+          color: Colors.white,
+        ),
+      ),
+      "title": AppStrings.OnlineClassRoutine,
+      "subtitle": AppStrings.Date,
+    },
+  ];
+
+  int get index => 0;
 
   @override
   Widget build(BuildContext context) {
@@ -71,9 +126,38 @@ class AllTasksCard extends StatelessWidget {
             return Container(
               height: 62.h,
               decoration: BoxDecoration(
-                color: Colors.white,
+                color: AppColors.CardColor,
                 borderRadius: BorderRadius.all(
                   Radius.circular(10.r),
+                ),
+              ),
+              child: Padding(
+                padding: const EdgeInsets.only(
+                        left: 15, right: 15, top: 10, bottom: 10)
+                    .r,
+                child: Row(
+                  mainAxisAlignment: MainAxisAlignment.start,
+                  children: [
+                    GridMap.elementAt(index)["img"],
+                    SizedBox(width: 15.h),
+                    Column(
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      children: [
+                        Text(
+                          "${GridMap.elementAt(index)["title"]}",
+                          style: TextStyle(
+                              fontSize: 12.sp, fontWeight: FontWeight.w500, color: AppColors.BlackTitleColor),
+                        ),
+                        SizedBox(height: 5.h),
+                        Text(
+                          "Save: ${GridMap.elementAt(index)["subtitle"]}",
+                          style: TextStyle(
+                              fontSize: 10.sp, fontWeight: FontWeight.w400,color: AppColors.BlackSubTitleColor),
+                        ),
+                      ],
+                    ),
+                  ],
                 ),
               ),
             );
@@ -81,37 +165,3 @@ class AllTasksCard extends StatelessWidget {
     );
   }
 }
-
-
-// Container(
-//       width: 131.w,
-//       height: 91.h,
-//       decoration: BoxDecoration(
-//         color: Color(0xFfC4C4C4),
-//         borderRadius: BorderRadius.all(
-//           Radius.circular(10.r),
-//         ),
-//       ),
-//       child: Padding(
-//         padding: const EdgeInsets.all(5).r,
-//         child: Column(
-//           mainAxisAlignment: MainAxisAlignment.spaceBetween,
-//           crossAxisAlignment: CrossAxisAlignment.start,
-//           children: [
-//             Image.asset(
-//               "images/bnr.png",
-//               height: 28.h,
-//               width: 38.w,
-//               fit: BoxFit.cover,
-//             ),
-//             Text(
-//               "Titl dgd e",
-//               style: TextStyle(fontSize: 12.sp, fontWeight: FontWeight.w500),
-//             ),
-//             Text(
-//               "Cost dfg gdfgdsfg d",
-//               style: TextStyle(fontSize: 10.sp, fontWeight: FontWeight.w400),
-//             )
-//           ],
-//         ),
-//       ),

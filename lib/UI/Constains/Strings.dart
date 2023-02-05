@@ -11,6 +11,7 @@ class AppStrings {
   static const SeeAll = 'See All';
   static const OnlineClassRoutine = 'Online Class Routine';
   static const SaveDate = 'Save Date';
+  static const Date = '10/05/2022';
   static const OfficeWorkList = 'Office Work List';
   static const DayTask = 'Day Task';
   static const AllTasks = 'All Tasks';
